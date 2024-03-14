@@ -16,6 +16,7 @@ const Dictaphone = () => {
   const [transDB, setTransDB] = useSearchDebounce();
 
   const [translatedValue, setTranslatedValue] = useState<string>("");
+  const [inputLang, setInputLang] = useState<string>("");
   const [outputLang, setOutputLang] = useState<string>("");
 
   // useEffect(() => {
@@ -94,14 +95,19 @@ const Dictaphone = () => {
     <div className={s.container}>
       <p>Microphone: {listening ? 'on' : 'off'}</p>
       <div className={s.buttons}>
-        <button onClick={() => SpeechRecognition.startListening({language: 'en', continuous: true})}>Start</button>
+        <button onClick={() => SpeechRecognition.startListening({language: inputLang, continuous: true})}>Start</button>
         <button onClick={SpeechRecognition.stopListening}>Stop</button>
         <button onClick={handleResetClick}>Reset</button>
       </div>
 
 
       <div className={s.selector}>
-        <Select placeholder='Select Language' value={outputLang} onChange={(e) => setOutputLang(e.target.value)}>
+        <Select placeholder="From" value={inputLang} onChange={(e) => setInputLang(e.target.value)}>
+          <option value='en'>English</option>
+          <option value='tr'>Turkish</option>
+          <option value='ru'>Russian</option>
+        </Select>
+        <Select placeholder='To' value={outputLang} onChange={(e) => setOutputLang(e.target.value)}>
           <option value='en'>English</option>
           <option value='tr'>Turkish</option>
           <option value='ru'>Russian</option>
