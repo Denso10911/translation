@@ -1,0 +1,32 @@
+.container {
+  width: 100dvw;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #383838;
+  color: white;
+  padding: 24px;
+  gap: 12px;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+}
+.selector {
+  max-width: 200px;
+}
+
+.input, .output {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  border: 1px solid white;
+  border-radius: 12px;
+  padding: 12px;
+  gap: 12px;
+  min-height: 120px;
+  width: 100%;
+}
