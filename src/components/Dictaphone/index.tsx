@@ -108,9 +108,9 @@ const Dictaphone = () => {
           <option value='ru'>Russian</option>
         </Select>
         <Select placeholder='To' value={outputLang} onChange={(e) => setOutputLang(e.target.value)}>
-          <option value='en'>English</option>
-          <option value='tr'>Turkish</option>
-          <option value='ru'>Russian</option>
+          <option value='english'>English</option>
+          <option value='turkish'>Turkish</option>
+          <option value='russian'>Russian</option>
         </Select>
       </div>
       
